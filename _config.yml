@@ -17,7 +17,7 @@ defaults:
       layout: "post"
 
 projects:
-  sort_by: stars
+  sort_by: pushed
   # sort_by options:
   #   - pushed
   #   - stars
@@ -33,7 +33,7 @@ social_media:
   # dribbble: your_username
   # facebook: your_username
   # hackerrank: your_username
-  # instagram: @BloeckchenArt
+  instagram: @bloeckchengrafik
   # keybase: your_username
   # linkedin: your_username
   # mastodon: your_username
@@ -43,8 +43,8 @@ social_media:
   # twitter: your_username
   # unsplash: your_username
   # vk: your_username
-  website: https://GameSucht.net
-  workingat: Gamesucht-Development
+  website: https://sulentia.com
+  workingat: SULDomi
   youtube: channel/UCIdJodt-a_26pBEkSiOKgAQ
 
 topics:
@@ -64,7 +64,7 @@ topics:
     web_url: https://github.com/topics/python
     image_url: https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/python/python.png
     
-  - name: Java
+  - name: Arduino (c++/Micropython)
     web_url: https://github.com/topics/arduino
     image_url: https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/arduino/arduino.png
 
