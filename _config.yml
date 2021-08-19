@@ -1,5 +1,5 @@
 layout: sidebar
-style: light
+style: dark
 
 plugins:
   - jekyll-octicons
@@ -38,13 +38,13 @@ social_media:
   # linkedin: your_username
   # mastodon: your_username
   # medium: your_username
-  # stackoverflow: your_user_id
+  stackoverflow: 16707054
   # telegram: your_username
   # twitter: your_username
   # unsplash: your_username
   # vk: your_username
-  website: https://sulentia.com
-  workingat: SULDomi
+  website: https://galaxycore.net
+  workingat: GalaxyCore
   youtube: channel/UCIdJodt-a_26pBEkSiOKgAQ
 
 topics:
