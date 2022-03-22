@@ -1,0 +1,70 @@
+@font-face {
+    font-family: 'VictorMono';
+    font-style: normal;
+    src: url('/assets/font/VictorMono-Regular.eot');
+    src: url('/assets/font/VictorMono-Regular.eot?#iefix') format('embedded-opentype'), url('/assets/font/VictorMono-Regular.woff') format('woff'), url('/assets/font/VictorMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'VictorMono';
+    font-style: italic;
+    src: url('/assets/font/VictorMono-Italic.eot');
+    src: url('/assets/font/VictorMono-Italic.eot?#iefix') format('embedded-opentype'), url('/assets/font/VictorMono-Italic.woff') format('woff'), url('/assets/font/VictorMono-Italic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'VictorMono-Oblique';
+    font-style: oblique;
+    src: url('/assets/font/VictorMono-Oblique.eot');
+    src: url('/assets/font/VictorMono-Oblique.eot?#iefix') format('embedded-opentype'), url('/assets/font/VictorMono-Oblique.woff') format('woff'), url('/assets/font/VictorMono-Oblique.ttf') format('truetype');
+}
+
+* {
+    font-family: VictorMono, monospace;
+    color: #fff;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    scroll-behavior: smooth;
+    background-color: #040e18;
+}
+
+nav {
+    height: 100vh;
+    position: absolute;
+    width: 60px;
+    left: 0;
+    background-color: #064c6b;
+    text-align: center;
+    z-index: 9999;
+}
+
+.sidebar-image {
+    width: 50px;
+    margin-top: 10px;
+    border-radius: 50%;
+}
+
+.wrapper {
+    margin-left: 60px;
+    width: calc(100vw - 60px);
+    height: 100vh;
+}
+
+main {
+    width: 100%;
+    text-align: center;
+    padding-top: 5%;
+}
+
+#profile-picture {
+    border-radius: 50%;
+}
+
+.typing {
+    width: 100%;
+    font-style: italic;
+}
