@@ -1,3 +1,9 @@
+function type(elem, text, index) {
+    elem.innerText = text.substring(0, index)
+    if (text.length > index)
+        setTimeout(type, 80 + Math.random()*40, elem, text, index + 1)
+}
+
 fetch("https://api.github.com/users/Bloeckchengrafik")
     .then(async value => {
         let json = JSON.parse(await value.text())
@@ -16,7 +22,7 @@ fetch("https://api.github.com/users/Bloeckchengrafik")
 
         // why, I won't change my name?!
         for (let i = 0; i < names.length; i++) {
-            names[i].innerText = json["name"]
+            type(names[i], json["name"], 0)
         }
     })
 
@@ -39,8 +45,13 @@ new Typed(".typing", {
         "German",
         "Uses KDE Plasma 5",
         "What the heck are NFTs?"
-    ].sort(() => (Math.random() > 0.5) ? 1 : -1),
+    ],
     typeSpeed: 100,
     backSpeed: 40,
     loop: true,
+    shuffle: true
+});
+
+new Typed(".nice-cursor", {
+    strings: [""],
 });
