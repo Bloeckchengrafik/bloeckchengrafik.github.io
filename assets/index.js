@@ -16,6 +16,7 @@ fetch("https://api.github.com/users/Bloeckchengrafik")
             profilePictures[i].src = json["avatar_url"]
         }
 
+        // Handy if I change my username - oh wait...
         for (let i = 0; i < hrefs.length; i++) {
             hrefs[i].href = json["html_url"]
         }
@@ -49,9 +50,6 @@ new Typed(".typing", {
     typeSpeed: 100,
     backSpeed: 40,
     loop: true,
-    shuffle: true
-});
-
-new Typed(".nice-cursor", {
-    strings: [""],
+    shuffle: true,
+    smartBackspace: false
 });

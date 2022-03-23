@@ -34,9 +34,9 @@ body, html {
 
 nav {
     height: 100vh;
-    position: absolute;
     width: 60px;
     left: 0;
+    position: fixed;
     background-color: #064c6b;
     text-align: center;
     z-index: 9999;
@@ -67,4 +67,10 @@ main {
 .typing {
     width: 100%;
     font-style: italic;
+}
+
+.socials {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 30px;
 }
