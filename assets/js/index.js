@@ -1,8 +1,27 @@
 function type(elem, text, index) {
     elem.innerText = text.substring(0, index)
     if (text.length > index)
-        setTimeout(type, 80 + Math.random()*40, elem, text, index + 1)
+        setTimeout(type, 80 + Math.random() * 40, elem, text, index + 1)
 }
+
+let text = ""
+let textChanged = false
+let index = 0
+let zenElem = document.querySelector("[data-zen]")
+
+function typeZen() {
+    if (textChanged) {
+        textChanged = false
+        index = 0
+        typeZen()
+    }
+    if (text.length > index) {
+        zenElem.innerText = text.substring(0, index)
+        index++
+    }
+}
+
+setInterval(typeZen, 80)
 
 fetch("https://api.github.com/users/Bloeckchengrafik")
     .then(async value => {
@@ -26,6 +45,27 @@ fetch("https://api.github.com/users/Bloeckchengrafik")
             type(names[i], json["name"], 0)
         }
     })
+
+fetch("https://api.github.com/zen")
+    .then(value => value.text())
+    .then(value => {
+        let zen = document.querySelector("[data-zen]")
+        zen.innerText = value
+        text = value
+    })
+
+// change
+const zenReload = function () {
+    fetch("https://api.github.com/zen")
+        .then(value => value.text())
+        .then(value => {
+            let prev = text
+            text = value
+            textChanged = prev !== text
+        })
+}
+
+setInterval(zenReload, 5000)
 
 new Typed(".typing", {
     strings: [

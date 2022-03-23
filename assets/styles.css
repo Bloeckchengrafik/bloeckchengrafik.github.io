@@ -127,3 +127,12 @@ main {
 a {
     color: #b6b6b6!important;
 }
+
+footer {
+    margin-top: 10vh;
+}
+
+.zen {
+    line-height: 0.7rem;
+    color: #b4b4b4;
+}
