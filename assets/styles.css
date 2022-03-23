@@ -28,7 +28,6 @@ body, html {
     height: 100%;
     width: 100%;
     margin: 0;
-    scroll-behavior: smooth;
     background-color: #040e18;
     overflow-x: hidden;
 }
@@ -134,4 +133,12 @@ footer {
 
 .zen {
     color: #b4b4b4;
+}
+
+.gh-stats {
+    margin-top: 5vh;
+}
+
+.gh-stats img {
+    max-width: calc(100vw - 70px);
 }
