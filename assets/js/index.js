@@ -23,46 +23,35 @@ function typeZen() {
 
 setInterval(typeZen, 80)
 
-fetch("https://api.github.com/users/Bloeckchengrafik")
-    .then(async value => {
-        let json = JSON.parse(await value.text())
-        let profilePictures = document.querySelectorAll("[data-profilepicture]")
-        let hrefs = document.querySelectorAll("[data-href]")
-        let names = document.querySelectorAll("[data-name]")
 
-        // Now I can't forget to change my pfp on the website
-        for (let i = 0; i < profilePictures.length; i++) {
-            profilePictures[i].src = json["avatar_url"]
-        }
+let zen = [
+    "Beautiful is better than ugly.",
+    "Explicit is better than implicit.",
+    "Simple is better than complex.",
+    "Complex is better than complicated.",
+    "Flat is better than nested.",
+    "Sparse is better than dense.",
+    "Readability counts.",
+    "Special cases aren't special enough to break the rules.",
+    "Although practicality beats purity.",
+    "Errors should never pass silently.",
+    "Unless explicitly silenced.",
+    "In the face of ambiguity, refuse the temptation to guess.",
+    "There should be one-- and preferably only one --obvious way to do it.",
+    "Now is better than never.",
+    "Although never is often better than *right* now.",
+    "If the implementation is hard to explain, it's a bad idea.",
+    "If the implementation is easy to explain, it may be a good idea.",
+    "Namespaces are one honking great idea -- let's do more of those!"
+]
 
-        // Handy if I change my username - oh wait...
-        for (let i = 0; i < hrefs.length; i++) {
-            hrefs[i].href = json["html_url"]
-        }
+text = zen.sort(() => Math.random() - 0.5)[0]
+zenElem.innerText = text
 
-        // why, I won't change my name?!
-        for (let i = 0; i < names.length; i++) {
-            type(names[i], json["name"], 0)
-        }
-    })
-
-fetch("https://api.github.com/zen")
-    .then(value => value.text())
-    .then(value => {
-        let zen = document.querySelector("[data-zen]")
-        zen.innerText = value
-        text = value
-    })
-
-// change
 const zenReload = function () {
-    fetch("https://api.github.com/zen")
-        .then(value => value.text())
-        .then(value => {
-            let prev = text
-            text = value
-            textChanged = prev !== text
-        })
+    let prev = text
+    text = zen.sort(() => Math.random() - 0.5)[0]
+    textChanged = prev !== text
 }
 
 setInterval(zenReload, 5000)
