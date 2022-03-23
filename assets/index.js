@@ -40,7 +40,7 @@ new Typed(".typing", {
         "Python-Developer",
         "Web-Developer",
         "HTML-Hakka",
-        "Bloeckchengrafik",
+        "AKA Bloeckchengrafik",
         "Codes in Cursive",
         "Tabby-User",
         "German",
@@ -53,3 +53,5 @@ new Typed(".typing", {
     shuffle: true,
     smartBackspace: false
 });
+
+console.log("Hey, do you know, what you are doing here? If so, do you want to help me build a project? https://galaxycore.net/")

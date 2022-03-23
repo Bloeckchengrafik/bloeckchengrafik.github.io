@@ -30,6 +30,7 @@ body, html {
     margin: 0;
     scroll-behavior: smooth;
     background-color: #040e18;
+    overflow-x: hidden;
 }
 
 nav {
@@ -42,10 +43,22 @@ nav {
     z-index: 9999;
 }
 
+.height-10vh {
+    height: 10vh;
+}
+
 .sidebar-image {
     width: 50px;
-    margin-top: 10px;
+    margin-top: 20px;
     border-radius: 50%;
+}
+
+.sidebar-icon {
+    font-size: 35px;
+}
+
+.height-1 {
+    height: 3vh;
 }
 
 .wrapper {
@@ -57,7 +70,6 @@ nav {
 main {
     width: 100%;
     text-align: center;
-    padding-top: 5%;
 }
 
 #profile-picture {
@@ -73,4 +85,36 @@ main {
     margin-top: 50px;
     text-align: center;
     font-size: 30px;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.card {
+    background-color: #091a2c;
+}
+
+.btn {
+    color: #d7d7d7;
+}
+
+.card-img-top {
+    height: 170px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
