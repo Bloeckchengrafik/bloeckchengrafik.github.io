@@ -4,6 +4,8 @@ function type(elem, text, index) {
         setTimeout(type, 80 + Math.random() * 40, elem, text, index + 1)
 }
 
+type(document.querySelector("[data-name]"), "Christian Bergschneider", 0)
+
 let text = ""
 let textChanged = false
 let index = 0
