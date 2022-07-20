@@ -21,14 +21,14 @@
 
 * {
     font-family: VictorMono, monospace;
-    color: #fff;
+    color: #d8dee9;
 }
 
 body, html {
     height: 100%;
     width: 100%;
     margin: 0;
-    background-color: #040e18;
+    background-color: #2e3440;
     overflow-x: hidden;
 }
 
@@ -37,7 +37,7 @@ nav {
     width: 60px;
     left: 0;
     position: fixed;
-    background-color: #064c6b;
+    background-color: #4c566a;
     text-align: center;
     z-index: 9999;
 }
@@ -102,7 +102,7 @@ main {
 }
 
 .card {
-    background-color: #091a2c;
+    background-color: #3b4252;
 }
 
 .btn {
