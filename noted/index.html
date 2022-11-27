@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>noted! A Note-Taking App for the 21st Century</title>
+    <link rel="stylesheet" href="nord.css">
+    <link rel="stylesheet" href="index.css">
+
+    <link rel="icon" href="img/icon.ico">
+</head>
+<body>
+<div class="splash">
+    <div>
+        <img src="img/icon.png" alt="LOGO">
+        <h1>Noted!</h1>
+        <p>A Note-Taking App for the 21st Century</p>
+
+        <div>
+            <button class="btn btn-primary" onclick="document.location = 'https://github.com/Bloeckchengrafik/noted'">Learn More</button>
+            <button class="btn btn-secondary" onclick="document.location = 'https://github.com/Bloeckchengrafik/noted/releases'">Download latest</button>
+        </div>
+    </div>
+</div>
+<canvas id="particles-js" class="particles"></canvas>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"
+        integrity="sha512-jq8sZI0I9Og0nnZ+CfJRnUzNSDKxr/5Bvha5bn7AHzTnRyxUfpUArMzfH++mwE/hb2efOo1gCAgI+1RMzf8F7g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    Particles.init({
+        selector: '.particles',
+        color: '#777777',
+        connectParticles: true,
+        maxParticles: 100,
+        sizeVariations: 5,
+    });
+</script>
+</body>
+</html>

@@ -4,27 +4,7 @@ function type(elem, text, index) {
         setTimeout(type, 80 + Math.random() * 40, elem, text, index + 1)
 }
 
-type(document.querySelector("[data-name]"), "Christian Bergschneider", 0)
-
-let text = ""
-let textChanged = false
-let index = 0
 let zenElem = document.querySelector("[data-zen]")
-
-function typeZen() {
-    if (textChanged) {
-        textChanged = false
-        index = 0
-        typeZen()
-    }
-    if (text.length > index) {
-        zenElem.innerText = text.substring(0, index)
-        index++
-    }
-}
-
-setInterval(typeZen, 80)
-
 
 let zen = [
     "Beautiful is better than ugly.",
@@ -50,10 +30,9 @@ let zen = [
 text = zen.sort(() => Math.random() - 0.5)[0]
 zenElem.innerText = text
 
-const zenReload = function () {
-    let prev = text
+const zenReload = () => {
     text = zen.sort(() => Math.random() - 0.5)[0]
-    textChanged = prev !== text
+    zenElem.innerText = text
 }
 
 setInterval(zenReload, 5000)
@@ -61,22 +40,24 @@ setInterval(zenReload, 5000)
 new Typed(".typing", {
     strings: [
         "Tea-Drinker",
-        "Pupil",
         "Hobby-Developer",
-        "Weeb",
         "Java-Developer",
-        "Jetbrains-Enthusiast",
+        "Kotlin-Developer",
+        "Typescript-Developer",
+        "Jetbrains User",
         "I Use Arch Btw",
-        "Linux Elitist",
         "Python-Developer",
         "Web-Developer",
         "HTML-Hakka",
         "AKA Bloeckchengrafik",
-        "Codes in Cursive",
         "Tabby-User",
         "German",
-        "Uses KDE Plasma 5",
-        "What the heck are NFTs?"
+        "Uses I3-gaps-rounded-nord-polybar-and-probably-some-other-stuff",
+        "Jetbrains > VSCode",
+        "Helix > Nvim",
+        "Rustacean",
+        "Speaks German, English and TypeScript",
+        "Linux All Day Every Day",
     ],
     typeSpeed: 100,
     backSpeed: 40,
@@ -85,4 +66,4 @@ new Typed(".typing", {
     smartBackspace: false
 });
 
-console.log("Hey, do you know, what you are doing here? If so, do you want to help me build a project? https://galaxycore.net/")
+console.log("Hey, do you know, what you are doing here? If so, do you want to help me build a project? https://stellarverse.de/")

@@ -38,8 +38,9 @@
 <div class="wrapper" id="wrap">
     <main id="home">
         <div class="height-10vh"></div>
-        <img src="assets/img/not-that-of-a-generic-user.png" alt="Profile Picture" id="profile-picture" width="128px" height="128px">
-        <h1>Hi, I'm <span data-name></span></h1>
+        <img src="assets/img/not-that-of-a-generic-user.png" alt="Profile Picture" id="profile-picture" width="128px"
+             height="128px">
+        <h1>Hi, I'm Christian Bergschneider</h1>
         <h2><span class="typing"></span></h2>
         <div class="socials">
             <a target="_blank" href="https://github.com/Bloeckchengrafik" data-href><i class="bi bi-github"></i></a>
@@ -54,36 +55,72 @@
             <h2 id="projects">Projects I've built</h2>
             <div class="projects-container">
                 <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="assets/img/gcbannerv2.png" alt="Image">
+                    <img class="card-img-top" src="assets/img/stellarverse.png" alt="Image">
+                    <div class="skill-pill-container">
+                        <div class="skill-pill">
+                            Lead Developer
+                        </div>
+                        <div class="skill-pill">
+                            Administator
+                        </div>
+                    </div>
                     <div class="card-body">
-                        <h5 class="card-title">GalaxyCore.net</h5>
-                        <p class="card-text">A small Minecraft Network with OneHit, KnockFFA, Citybuild, MissionAres and
-                            much more...</p>
-                        <a href="https://galaxycore.net" class="btn" target="_blank">Details</a>
+                        <h5 class="card-title">Stellarverse</h5>
+                        <p class="card-text">
+                            Did you ever wanted to have an own website or app? Meet Stellarverse!
+                            Stellarverse offers a wide range of services, from web hosting to app development.
+                        </p>
+                        <a href="https://stellarverse.de" class="btn" target="_blank">Details</a>
                     </div>
                 </div>
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top"
-                         src="https://github.com/elektrofuzzis/ftcSoundBar/raw/main/wikifiles/ftcSoundBar.png"
+                         src="assets/img/noted-lines.png"
                          alt="Image">
+                    <div class="skill-pill-container">
+                        <div class="skill-pill">
+                            Open Source
+                        </div>
+                        <div class="skill-pill">
+                            Desktop-App
+                        </div>
+                    </div>
                     <div class="card-body">
-                        <h5 class="card-title">ftcSoundBarPy</h5>
-                        <p class="card-text">Python Library to control the ftcSoundBar using its REST-Api and Python</p>
-                        <a href="https://github.com/Bloeckchengrafik/ftcSoundBarPy" class="btn"
+                        <h5 class="card-title">Noted!</h5>
+                        <p class="card-text">A Note-Taking App for the 21st Century that is designed to be as simple as possible to use and as easy to
+                            modify as possible. Written in Rust, Tauri and Svelte.
+                        </p>
+                        <a href="https://bloeckchengrafik.github.io/noted" class="btn"
                            target="_blank">Details</a>
                     </div>
                 </div>
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="assets/img/Handbestueckung10.jpg" alt="Image">
+                    <div class="skill-pill-container">
+                        <div class="skill-pill">
+                            Robotics
+                        </div>
+                        <div class="skill-pill">
+                            Inter-IC-Communication
+                        </div>
+                    </div>
                     <div class="card-body">
                         <h5 class="card-title">ftPwrDrive.py</h5>
-                        <p class="card-text">Python Library to control the ftcSoundBar using I2C and Python. Based on
-                            Torsten Stuehn's ftrobopy</p>
+                        <p class="card-text">Python Library to control the ftPwrDrive by my father and me using I2C and Python. Based on
+                            Torsten Stuehn's ftrobopy-Library</p>
                         <a href="https://github.com/Bloeckchengrafik/ftPwrDrive-python-lib" class="btn" target="_blank">Details</a>
                     </div>
                 </div>
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="assets/img/bci_plan.png" alt="Image">
+                    <div class="skill-pill-container">
+                        <div class="skill-pill">
+                            Hardware
+                        </div>
+                        <div class="skill-pill">
+                            Neuro-Engineering
+                        </div>
+                    </div>
                     <div class="card-body">
                         <h5 class="card-title">Brain-Computer-Interface</h5>
                         <p class="card-text">A school project with <a href="https://github.com/Flo-Mit-H"
@@ -96,21 +133,15 @@
             </div>
         </div>
         <div class="keys">
-            <h2 id="keys">PGP and SSH-Keys</h2>
+            <h2 id="keys">PGP Key</h2>
             <p>
-                My PGP key has the fingerprint <code>F221 2F87 5BB3 89BB 7621 72E2 3991 F97F 5FA2 8D3E</code> and my SSH
-                key has the fingerprint <code>65:aa:66:bb:00:bb:5d:9c:b4:82:14:95:e5:65:6a:31</code>. <br/>
+                My PGP key has the fingerprint <code>F221 2F87 5BB3 89BB 7621 72E2 3991 F97F 5FA2 8D3E</code>. <br/>
                 <br/>
                 Get the PGP-Key as a <a href="keys/ChristianBergschneider_0x5FA28D3E_public.asc" target="_blank">raw
                 file</a>(<a href="keys/ChristianBergschneider_0x5FA28D3E_public.asc.sha256sum"
                             target="_blank">SHA256Sum</a>) or import it directly: <br/>
                 <code>curl https://bloeckchengrafik.github.io/keys/ChristianBergschneider_0x5FA28D3E_public.asc | gpg
                     --import</code><br/>
-                ...or obtain it from the openpgp.org keyserver: <code>gpg --auto-key-locate hkps://keys.openpgp.org
-                --recv-keys 3991F97F5FA28D3E</code><br/>
-                <br/>
-                Get the SSH-RSA Key as a <a href="keys/id_ChristianBergschneider.pub" target="_blank">raw file</a>(<a
-                    href="keys/id_ChristianBergschneider.pub.sha256sum" target="_blank">SHA256Sum</a>)
             </p>
         </div>
         <div class="gh-stats">
