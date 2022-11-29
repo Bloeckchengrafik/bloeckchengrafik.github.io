@@ -58,6 +58,7 @@ new Typed(".typing", {
         "Rustacean",
         "Speaks German, English and TypeScript",
         "Linux All Day Every Day",
+        "brain stuff"
     ],
     typeSpeed: 100,
     backSpeed: 40,
