@@ -41,24 +41,22 @@ new Typed(".typing", {
     strings: [
         "Tea-Drinker",
         "Hobby-Developer",
-        "Java-Developer",
-        "Kotlin-Developer",
-        "Typescript-Developer",
+        "Java/Kotlin",
+        "TypeScript",
         "Jetbrains User",
-        "I Use Arch Btw",
-        "Python-Developer",
+        "I Use EndeavourOS btw",
+        "Python",
         "Web-Developer",
-        "HTML-Hakka",
         "AKA Bloeckchengrafik",
-        "Tabby-User",
         "German",
         "Uses I3-gaps-rounded-nord-polybar-and-probably-some-other-stuff",
         "Jetbrains > VSCode",
         "Helix > Nvim",
         "Rustacean",
         "Speaks German, English and TypeScript",
-        "Linux All Day Every Day",
-        "brain stuff"
+        "brain stuff",
+        "Not available for hire",
+        "Sailing is fun"
     ],
     typeSpeed: 100,
     backSpeed: 40,
@@ -66,5 +64,3 @@ new Typed(".typing", {
     shuffle: true,
     smartBackspace: false
 });
-
-console.log("Hey, do you know, what you are doing here? If so, do you want to help me build a project? https://stellarverse.de/")
