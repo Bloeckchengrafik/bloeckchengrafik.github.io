@@ -7,6 +7,5 @@ Gemfile.lock
 .hugo_build.lock
 node_modules/
 obsidian_vault/.obsidian
-content/posts/*
 .idea/
 resources/_gen
