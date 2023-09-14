@@ -10,26 +10,28 @@
     <meta property="og:site_name" content="Christian B. ">
     <meta property="og:url" content="https://bloeckchengrafik.github.io">
     <meta property="og:description"
-          content="Hey, I'm Chris, a fellow Hobby-Developer. I'm currently working on Stellarvers">
+          content="Hey, I'm Chris, Ropeway enthusiast and hobby developer.">
     <meta property="og:type" content="profile">
-    <meta property="og:image" content="https://bloeckchengrafik.github.io/assets/img/not-that-of-a-generic-user.png">
+    <meta property="og:image" content="https://bloeckchengrafik.github.io/assets/img/avatar_sail.jpg">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="/assets/styles.css">
 
-    <link rel="apple-touch-icon" href="assets/img/not-that-of-a-generic-user.png">
-    <link rel="icon" href="assets/img/not-that-of-a-generic-user.png">
+    <link rel="apple-touch-icon" href="/assets/img/not-that-of-a-generic-user.png">
+    <link rel="icon" href="/assets/img/avatar_sail.jpg">
 
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
-    <script src="assets/js/index.js" defer></script>
+    <script src="/assets/js/index.js" defer></script>
 </head>
 <body>
 <nav>
-    <a href="#home"><img src="assets/img/not-that-of-a-generic-user.png" alt="Icon" class="sidebar-image"></a>
+    <a href="#home"><img src="/assets/img/avatar_sail.jpg" alt="Icon" class="sidebar-image"></a>
     <div class="height-1"></div>
     <a href="#projects"><i class="bi bi-kanban sidebar-icon"></i></a>
+    <div class="height-1"></div>
+    <a href="/posts"><i class="bi bi-journal-text sidebar-icon"></i></a>
     <div class="height-1"></div>
     <a href="#keys"><i class="bi bi-key sidebar-icon"></i></a>
     <div class="height-1"></div>
@@ -38,7 +40,7 @@
 <div class="wrapper" id="wrap">
     <main id="home">
         <div class="height-10vh"></div>
-        <img src="assets/img/not-that-of-a-generic-user.png" alt="Profile Picture" id="profile-picture" width="128px"
+        <img src="/assets/img/avatar_sail.jpg" alt="Profile Picture" id="profile-picture" width="128px"
              height="128px">
         <h1>Hi, I'm Christian Bergschneider</h1>
         <h2><span class="typing"></span></h2>
@@ -50,12 +52,13 @@
             <a target="_blank" href="https://www.reddit.com/user/BloeckchenDev"><i class="bi bi-reddit"></i></a>
             <a target="_blank" href="https://stackoverflow.com/users/16519092/bloeckchen"><i
                     class="bi bi-stack-overflow"></i></a>
+            <a target="_blank" href="https://bloeckchengrafik.dev/posts"><i class="bi bi-file-earmark-text"></i></a>
         </div>
         <div class="projects">
             <h2 id="projects">Projects I've built</h2>
             <div class="projects-container">
                 <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="assets/img/Sync_Main_Menu.png" alt="Image">
+                    <img class="card-img-top" src="/assets/img/Sync_Main_Menu.png" alt="Image">
                     <div class="skill-pill-container">
                         <div class="skill-pill">
                             Fullstack
@@ -75,7 +78,7 @@
                 </div>
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top"
-                         src="assets/img/noted-lines.png"
+                         src="/assets/img/noted-lines.png"
                          alt="Image">
                     <div class="skill-pill-container">
                         <div class="skill-pill">
@@ -95,7 +98,7 @@
                     </div>
                 </div>
                 <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="assets/img/Handbestueckung10.jpg" alt="Image">
+                    <img class="card-img-top" src="/assets/img/Handbestueckung10.jpg" alt="Image">
                     <div class="skill-pill-container">
                         <div class="skill-pill">
                             Robotics
@@ -112,7 +115,7 @@
                     </div>
                 </div>
                 <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="assets/img/bci_plan.png" alt="Image">
+                    <img class="card-img-top" src="/assets/img/bci_plan.png" alt="Image">
                     <div class="skill-pill-container">
                         <div class="skill-pill">
                             Hardware
@@ -132,13 +135,21 @@
                 </div>
             </div>
         </div>
+
+        <div class="blog" style="margin-top: 3em">
+            <h2 id="blog">Blog</h2>
+            <p>
+                I'm currently working on a blog. Get to it <a href="https://bloeckchengrafik.dev/posts" target="_blank">here</a>.
+            </p>
+        </div>
+
         <div class="keys">
             <h2 id="keys">PGP Key</h2>
             <p>
                 My PGP key has the fingerprint <code>F221 2F87 5BB3 89BB 7621 72E2 3991 F97F 5FA2 8D3E</code>. <br/>
                 <br/>
-                Get the PGP-Key as a <a href="keys/ChristianBergschneider_0x5FA28D3E_public.asc" target="_blank">raw
-                file</a>(<a href="keys/ChristianBergschneider_0x5FA28D3E_public.asc.sha256sum"
+                Get the PGP-Key as a <a href="/keys/ChristianBergschneider_0x5FA28D3E_public.asc" target="_blank">raw
+                file</a>(<a href="/keys/ChristianBergschneider_0x5FA28D3E_public.asc.sha256sum"
                             target="_blank">SHA256Sum</a>) or import it directly: <br/>
                 <code>curl https://bloeckchengrafik.github.io/keys/ChristianBergschneider_0x5FA28D3E_public.asc | gpg
                     --import</code><br/>

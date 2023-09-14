@@ -119,7 +119,8 @@ main {
     justify-content: space-between;
 }
 
-.keys {
+.keys,
+.blog {
     margin-top: 5vh;
 }
 
