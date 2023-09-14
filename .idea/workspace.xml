@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="856abf54-0a88-44d2-b33b-9e2574f360c1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/bloeckchengrafik.github.io.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archetypes/default.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hugo.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/partials/head-extra.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/font/VictorMono-Italic.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/font/VictorMono-Italic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/font/VictorMono-Italic.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/font/VictorMono-Oblique.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/font/VictorMono-Oblique.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/font/VictorMono-Oblique.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/font/VictorMono-Regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/font/VictorMono-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/font/VictorMono-Regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/img/Handbestueckung10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/img/Sync_Main_Menu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/img/avatar_sail.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/img/bci_plan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/img/not-that-of-a-generic-user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/img/noted-lines.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/img/stellarverse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/keys/ChristianBergschneider_0x5FA28D3E_public.asc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/keys/ChristianBergschneider_0x5FA28D3E_public.asc.sha256sum" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/noted/img/128x128.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/noted/img/128x128@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/noted/img/32x32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/noted/img/Square107x107Logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/noted/img/Square142x142Logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/noted/img/Square150x150Logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/noted/img/Square284x284Logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/noted/img/Square30x30Logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/noted/img/Square310x310Logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/noted/img/Square44x44Logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/noted/img/Square71x71Logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/noted/img/Square89x89Logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/noted/img/StoreLogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/noted/img/icon.icns" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/noted/img/icon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/noted/img/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/noted/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/noted/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/noted/nord.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/holy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/portfolio.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/font/VictorMono-Italic.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/font/VictorMono-Italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/font/VictorMono-Italic.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/font/VictorMono-Oblique.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/font/VictorMono-Oblique.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/font/VictorMono-Oblique.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/font/VictorMono-Regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/font/VictorMono-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/font/VictorMono-Regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/Handbestueckung10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/Sync_Main_Menu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/bci_plan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/not-that-of-a-generic-user.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/noted-lines.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/stellarverse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hmm/nii.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keys/ChristianBergschneider_0x5FA28D3E_public.asc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keys/ChristianBergschneider_0x5FA28D3E_public.asc.sha256sum" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/noted/img/128x128.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/noted/img/128x128@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/noted/img/32x32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/noted/img/Square107x107Logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/noted/img/Square142x142Logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/noted/img/Square150x150Logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/noted/img/Square284x284Logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/noted/img/Square30x30Logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/noted/img/Square310x310Logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/noted/img/Square44x44Logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/noted/img/Square71x71Logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/noted/img/Square89x89Logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/noted/img/StoreLogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/noted/img/icon.icns" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/noted/img/icon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/noted/img/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/noted/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/noted/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/noted/nord.css" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="r31emm2b" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="2VOnc8uODtVC8ZHQTI7CRkf2Rv2" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "hugo",
+    "last_opened_file_path": "/projects/32_Hugo/bloeckchengrafik.github.io",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/obsidian_vault" />
+      <recent name="$PROJECT_DIR$/static/assets/img" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/content" />
+      <recent name="$PROJECT_DIR$/content/posts" />
+      <recent name="$PROJECT_DIR$/static" />
+      <recent name="$PROJECT_DIR$/data" />
+      <recent name="$PROJECT_DIR$/layouts" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="856abf54-0a88-44d2-b33b-9e2574f360c1" name="Changes" comment="" />
+      <created>1694716070595</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1694716070595</updated>
+      <workItem from="1694716071608" duration="5568000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
