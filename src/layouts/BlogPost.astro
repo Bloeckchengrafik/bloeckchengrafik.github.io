@@ -21,16 +21,16 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			}
 			.hero-image {
 				width: 100%;
+				@apply max-w-3xl mx-auto;
 			}
 			.hero-image img {
 				display: block;
-				margin: 0 auto;
+				margin: 12px auto;
 				border-radius: 12px;
 				box-shadow: var(--box-shadow);
 			}
 			.prose {
-				width: 720px;
-				max-width: calc(100% - 2em);
+				@apply max-w-3xl w-screen;
 				margin: auto;
 				padding: 1em;
 				color: rgb(var(--gray-dark));
