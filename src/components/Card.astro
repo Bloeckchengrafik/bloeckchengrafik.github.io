@@ -1,0 +1,23 @@
+---
+const {src, tag, name, id, href} = Astro.props
+---
+
+<div class="border rounded border-gray-300 shadow-lg max-w-[400px] flex flex-col">
+    <img src={src} alt={id} class="w-full h-64 object-cover rounded-t"/>
+    <div class="flex-1 flex flex-col justify-between">
+        <div class="p-4 prose">
+            <h2 class="flex justify-between">
+                {name}
+                <span class="font-medium text-base py-1 px-2 rounded-full bg-primary">
+                {tag}
+            </span>
+            </h2>
+            <p>
+                <slot/>
+            </p>
+        </div>
+        <a class="no-underline text-neutral-700 block p-4" href={href}>
+            Learn more...
+        </a>
+    </div>
+</div>
