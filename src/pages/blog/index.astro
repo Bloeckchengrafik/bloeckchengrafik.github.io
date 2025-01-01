@@ -5,6 +5,7 @@ import Footer from "../../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
+import { authors } from "../../authors";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -38,9 +39,14 @@ const posts = (await getCollection("blog")).sort(
                       <h4 class="text-lg font-bold tracking-tight">
                         {post.data.title}
                       </h4>
-                      <p class="font-light text-sm">
-                        <FormattedDate date={post.data.pubDate} />
-                      </p>
+                      <div class="font-light text-sm flex items-center">
+                        <FormattedDate date={post.data.pubDate} /> 
+                        {post.data.authors.map((item) => (
+                          <div class="flex h-8 items-center ml-1">
+                             &bull; <img src={authors[item].image} class="h-[1em] w-[1em] my-0 ml-1 mr-1 rounded">{authors[item].name}
+                          </div>
+                        ))}
+                      </div>
                       <p>{post.data.description}</p>
                     </div>
                     <p class="underline text-neutral-600 pb-2">Learn more</span>
