@@ -6,10 +6,12 @@ import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import VisiblilityTracker from '../components/VisiblilityTracker.svelte';
 import PostComments from '../components/PostComments.astro';
+import Author from '../components/Author.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, authors } = Astro.props;
+
 ---
 
 <html lang="en">
@@ -65,17 +67,20 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				</div>
 				<div class="prose">
 					<div class="title">
-						<div class="date">
+						<div class="date flex gap-2 justify-center">
 							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
+							{authors.map((item) => (
+								<Author author={item} />
+							))}
 						</div>
 						<h1>{title}</h1>
+						{
+							updatedDate && (
+								<div class="last-updated-on text-sm text-gray-500">
+									Last updated on <FormattedDate date={updatedDate} />
+								</div>
+							)
+						}
 						<hr />
 					</div>
 					<slot />

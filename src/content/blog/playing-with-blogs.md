@@ -3,6 +3,7 @@ title: 'Playing with Blogs'
 description: "Why am I building a blog at all? Don't I have enough to do? No! Of course not"
 pubDate: 'Sep 14 2023'
 heroImage: '/blog-image-playingwithblogs.png'
+authors: [ "chris" ]
 ---
 
 Hello World! Wait, no, at this point, I should probably write a motivational text about why I started this blog. But I won't. I just want to play around with this blog and see how it works. I will probably write a proper post later.
