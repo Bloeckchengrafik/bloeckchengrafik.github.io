@@ -7,8 +7,6 @@ heroImage: '/terra-minestom-resources/screenshot1.webp'
 authors: [ "chris" ]
 ---
 
-> This blog post is a work in progress. I will update it as I make progress on the project.
-
 I've been working on a [Minecraft server](https://asorda.net) for a while now that uses Minestom as the server software. Minestom is a great server software, but it does not come with world generation out of the box. After some tests with my own world generation, I decided to use Terra because I couldn't get the performance and polish I wanted with my own world generation in a reasonable amount of time.
 
 There was just one issue: Terra is not compatible with Minestom. This blog post is about how I made it compatible.
@@ -85,7 +83,65 @@ world does not decrease significantly anymore. So let's stick with 128 chunks fo
 
 ## How can I use it?
 
-You can't. Yet. The code is opensource but I want to get it to a more stable state before I add it to the Terra repository. I will update this blog post when it is ready. If you insist on using it now, you can find the code [here](https://github.com/everbuild-org/Terra/tree/feat/platform/minestom). Keep in mind that this is a work in progress and not stable at all as well as not feature complete (Entities, Biomes, Items and Commands are not implemented yet).
+You can now! Since I didn't want to wait for the pull request to be merged, I uploaded the library to my [maven repository](https://mvn.everbuild.org/public).
+
+To use it, add the following to your `build.gradle.kts`:
+
+```kotlin
+repositories {
+    maven("https://mvn.everbuild.org/public")
+}
+```
+
+or your `pom.xml`:
+
+```xml
+<repositories>
+    <repository>
+        <id>everbuild</id>
+        <url>https://mvn.everbuild.org/public</url>
+    </repository>
+</repositories>
+```
+
+Then add the dependency:
+
+```kotlin
+dependencies {
+    implementation("com.dfsek.terra:minestom:6.6.0-BETA+d0bc006fa")
+}
+```
+
+or
+
+```xml
+<dependency>
+  <groupId>com.dfsek.terra</groupId>
+  <artifactId>minestom</artifactId>
+  <version>6.6.0-BETA+d0bc006fa</version>
+</dependency>
+```
+
+Now you can use Terra in your Minestom project. To use the generator on an existing instance, you can use the following code:
+
+```java
+TerraMinestomWorldBuilder.from(instance)
+    .defaultPack()
+    .attach();
+```
+
+This will generate a world with the default pack. The following methods are available:
+- `defaultPack()`: Uses the default pack that comes with Terra.
+- `pack(ConfigPack)`: Uses a custom pack via the Terra API.
+- `packById(String)`: Uses a custom pack via the pack id.
+- `seed(long)`: Sets the seed of the world, if not set, a random seed will be used.
+- `entityFactory(EntityFactory)`: Sets the entity factory for the world. This can be used to add AI to entities.
+- `blockEntityFactory(BlockEntityFactory)`: Sets the block entity factory for the world. This can be used to implement block entities.
+- `attach()`: Attaches the generator to the instance and returns the Terra `ServerWorld`.
+
+You'll need to use one of the pack methods and the attach method to generate a world. The other methods are optional.
+
+Thanks for trying out Terra on Minestom!
 
 ## Conclusion
 
