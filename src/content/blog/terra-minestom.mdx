@@ -89,7 +89,13 @@ To use it, add the following to your `build.gradle.kts`:
 
 ```kotlin
 repositories {
-    maven("https://mvn.everbuild.org/public")
+  maven {
+      url = uri("https://mvn.everbuild.org/public")
+  }
+
+  maven {
+      url = uri("https://repo.codemc.io/repository/maven-public/")
+  }
 }
 ```
 
@@ -100,6 +106,10 @@ or your `pom.xml`:
     <repository>
         <id>everbuild</id>
         <url>https://mvn.everbuild.org/public</url>
+    </repository>
+    <repository>
+        <id>codemc</id>
+        <url>https://repo.codemc.io/repository/maven-public/%22</url>
     </repository>
 </repositories>
 ```
