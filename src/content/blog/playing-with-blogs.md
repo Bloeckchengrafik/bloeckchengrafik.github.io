@@ -3,6 +3,7 @@ title: 'Playing with Blogs'
 description: "Why am I building a blog at all? Don't I have enough to do? No! Of course not"
 pubDate: 'Sep 14 2023'
 heroImage: '/blog-image-playingwithblogs.png'
+preview: false
 authors: [ "chris" ]
 ---
 

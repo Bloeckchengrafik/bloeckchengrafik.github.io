@@ -17,9 +17,18 @@
         },
         {
             id: '2',
-            position: {x: 300, y: 150},
+            position: {x: 300, y: 100},
             data: {
                 label: 'h_da Darmstadt'
+            },
+            sourcePosition: Position.Right,
+            targetPosition: Position.Left
+        },
+        {
+            id: '2/c',
+            position: {x: 300, y: 200},
+            data: {
+                label: 'SVA GmbH'
             },
             sourcePosition: Position.Right,
             targetPosition: Position.Left
@@ -41,8 +50,19 @@
                 animated: true
             },
             {
+                id: '1-2/c',
+                source: '1',
+                target: '2/c',
+                animated: true
+            },
+            {
                 id: '2-3',
                 source: '2',
+                target: '3',
+            },
+            {
+                id: '2/c-3',
+                source: '2/c',
                 target: '3',
             }
         ]
