@@ -10,8 +10,7 @@
     const handleVisibility = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting && !fired) {
-          // Fire the Umami event
-          umami.track(eventName);
+          posthog.capture(eventName)
           fired = true;
         }
       });

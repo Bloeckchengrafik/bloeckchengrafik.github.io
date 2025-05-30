@@ -45,7 +45,7 @@ const posts = (await getCollection("blog")).sort(
                           <div class="flex h-8 items-center ml-1">
                              &bull; <img src={authors[item].image} class="h-[1em] w-[1em] my-0 ml-1 mr-1 rounded">{authors[item].name}
                           </div>
-                        ))}
+                        ))} 
                       </div>
                       <p>{post.data.description}</p>
                     </div>

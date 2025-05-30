@@ -10,7 +10,7 @@ import Author from '../components/Author.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage, authors } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, authors, preview } = Astro.props;
 
 ---
 
@@ -72,6 +72,11 @@ const { title, description, pubDate, updatedDate, heroImage, authors } = Astro.p
 							{authors.map((item) => (
 								<Author author={item} />
 							))}
+							{preview && (
+								<div class="text-gray-500">
+									&bull; Preview
+								</div>
+							)}
 						</div>
 						<h1>{title}</h1>
 						{
