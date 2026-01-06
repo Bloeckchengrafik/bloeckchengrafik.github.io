@@ -8,8 +8,8 @@ import MastodonLogo from "phosphor-astro/MastodonLogoDuotone.astro";
 import SOLogo from "phosphor-astro/StackOverflowLogoDuotone.astro";
 ---
 
-<header class="w-full h-16 p-2 flex bg-background-extreme shadow">
-    <nav class="max-w-7xl w-full mx-auto flex justify-between items-center">
+<header class="w-full p-2 flex bg-background-extreme shadow">
+    <nav class="max-w-7xl w-full mx-auto flex topthing gap-4 items-center flex-wrap md:flex-nowrap">
         <h2 class="text-2xl">
             <a href="/">{SITE_TITLE}</a>
         </h2>
@@ -72,3 +72,14 @@ import SOLogo from "phosphor-astro/StackOverflowLogoDuotone.astro";
         </div>
     </nav>
 </header>
+
+<style>
+    .topthing {
+        justify-content: center;
+    }
+    @media (width >= 40rem /* 640px */) {
+        .topthing {
+            justify-content: space-between;
+        }
+    }
+</style>

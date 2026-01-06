@@ -1,24 +1,31 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
-@layer base {
-    :root {
-        --text: #060a05;
-        --background: #f8fbf8;
-        --backgroundExtreme: #ffffff;
-        --primary: #66a95e;
-        --secondary: #9ccabc;
-        --accent: #7fbaba;
-    }
-    .dark {
-        --text: #f6faf5;
-        --background: #040604;
-        --backgroundExtreme: #000000;
-        --primary: #5d9f56;
-        --secondary: #366356;
-        --accent: #468181;
-    }
+:root {
+    --text: #060a05;
+    --background: #f8fbf8;
+    --backgroundExtreme: #ffffff;
+    --primary: #66a95e;
+    --secondary: #9ccabc;
+    --accent: #7fbaba;
+}
+
+.dark {
+    --text: #f6faf5;
+    --background: #040604;
+    --backgroundExtreme: #000000;
+    --primary: #5d9f56;
+    --secondary: #366356;
+    --accent: #468181;
+}
+
+@theme {
+    --color-text: var(--text);
+    --color-background: var(--background);
+    --color-background-extreme: var(--backgroundExtreme);
+    --color-primary: var(--primary);
+    --color-secondary: var(--secondary);
+    --color-accent: var(--accent);
 }
 
 html {

@@ -5,5 +5,5 @@ let { author } = Astro.props;
 let data: typeof authors["chris"] = authors[author];
 ---
 <div class="flex h-8">
-    &bull; <img src={data.image} class="h-[1em] w-[1em] my-0 ml-2 mr-1 rounded"><a href={data.href} target="_blank" data-umami-event={`exit author profile ${data.name}`}>{data.name}</a>
+    &bull; <img src={data.image} class="h-[1em] w-[1em] mt-0 mb-0 ml-2 mr-1 rounded"><a href={data.href} target="_blank" data-umami-event={`exit author profile ${data.name}`}>{data.name}</a>
 </div>

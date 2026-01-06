@@ -4,7 +4,7 @@
 
     import '@xyflow/svelte/dist/style.css';
 
-    const nodes = writable<XYNode[]>([
+    const nodes = $state.raw<XYNode[]>([
         {
             id: '1',
             position: {x: 100, y: 140},
@@ -42,7 +42,7 @@
             class: "opacity-50"
         }
     ]);
-    const edges = writable<Edge[]>([
+    const edges = $state.raw<Edge[]>([
             {
                 id: '1-2',
                 source: '1',
@@ -70,8 +70,15 @@
 </script>
 
 <main>
-    <SvelteFlow {nodes} {edges} zoomOnScroll={false} autoPanOnConnect={false} autoPanOnNodeDrag={false}
-                nodesConnectable={false} nodeOrigin={[0.5, 0.5]}>
+    <SvelteFlow {nodes} {edges} 
+                zoomOnScroll={false} 
+                autoPanOnConnect={false} 
+                autoPanOnNodeDrag={false}
+                nodesConnectable={false} 
+                nodeOrigin={[0.5, 0.5]}
+                fitView
+                fitViewOptions={{padding: 1}}
+    >
         <Background bgColor="#f8fbf8"/>
         <!--        <Controls />-->
     </SvelteFlow>
