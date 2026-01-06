@@ -4,6 +4,7 @@ import { SITE_TITLE } from "../consts";
 import TwitterLogo from "phosphor-astro/TwitterLogoDuotone.astro";
 import GithubLogo from "phosphor-astro/GithubLogoDuotone.astro";
 import DiscordLogo from "phosphor-astro/DiscordLogoDuotone.astro";
+import MastodonLogo from "phosphor-astro/MastodonLogoDuotone.astro";
 import SOLogo from "phosphor-astro/StackOverflowLogoDuotone.astro";
 ---
 
@@ -57,6 +58,16 @@ import SOLogo from "phosphor-astro/StackOverflowLogoDuotone.astro";
                 aria-label="Stack Overflow"
             >
                 <SOLogo class="text-black aspect-square h-8" />
+            </a>
+            <a
+                href="https://social.tchncs.de/@bloeckchengrafik"
+                target="_blank"
+                rel="me"
+                data-umami-event="exit stackoverflow"
+                title="Yes, i have a stack overflow account, flame me"
+                aria-label="Stack Overflow"
+            >
+                <MastodonLogo class="text-black aspect-square h-8" />
             </a>
         </div>
     </nav>
