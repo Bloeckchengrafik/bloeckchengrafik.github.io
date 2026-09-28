@@ -1,6 +1,4 @@
-# Bloeckchengrafik
-
-The site is built with Astro 7. The homepage follows the selected notebook concept in [`idea/`](idea/index.html); the other visual directions have been retired.
+This is just my personal website.
 
 ## Development
 
