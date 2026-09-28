@@ -1,95 +1,35 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import FormattedDate from '../components/FormattedDate.astro';
-import VisiblilityTracker from '../components/VisiblilityTracker.svelte';
+import SiteLayout from './SiteLayout.astro';
 import PostComments from '../components/PostComments.astro';
-import Author from '../components/Author.astro';
+import { authors as authorProfiles } from '../authors';
 
-type Props = CollectionEntry<'blog'>['data'];
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  updatedDate?: Date;
+  heroImage?: string;
+  authors: string[];
+}
 
 const { title, description, pubDate, updatedDate, heroImage, authors } = Astro.props;
-
+const byline = authors.map((id) => authorProfiles[id as keyof typeof authorProfiles]?.name ?? id).join(', ');
 ---
 
-<html lang="en">
-	<head>
-		<BaseHead title={title} description={description} />
-		<style>
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
-			}
-			.hero-image {
-				width: 100%;
-				@apply max-w-3xl mx-auto;
-			}
-			.hero-image img {
-				display: block;
-				margin: 12px auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
-			}
-			.prose {
-				@apply max-w-3xl w-screen;
-				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
-			}
-			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
-			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
-			}
-			.date {
-				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
-		</style>
-	</head>
-
-	<body>
-		<Header />
-		<main>
-			<article>
-				<div class="hero-image">
-					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
-				</div>
-				<div class="prose">
-					<div class="title">
-						<div class="date flex gap-2 justify-center">
-							<FormattedDate date={pubDate} />
-							{authors.map((item) => (
-								<Author author={item} />
-							))}
-						</div>
-						<h1>{title}</h1>
-						{
-							updatedDate && (
-								<div class="last-updated-on text-sm text-gray-500">
-									Last updated on <FormattedDate date={updatedDate} />
-								</div>
-							)
-						}
-						<hr />
-					</div>
-					<slot />
-					<VisiblilityTracker eventName={"reach end of " + title} client:visible />
-
-					<PostComments />
-				</div>
-			</article>
-		</main>
-		<Footer />
-	</body>
-</html>
+<SiteLayout title={`${title} — Bloeckchengrafik`} description={description} image={heroImage} mainClass="article-page">
+  <article>
+    <header class="article-header">
+      <div class="kicker">Article</div>
+      <h1>{title}</h1>
+      <p>{description}</p>
+      <div class="meta">
+        <time datetime={pubDate.toISOString()}>{pubDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
+        {byline && <> · {byline}</>}
+        {updatedDate && <> · updated <time datetime={updatedDate.toISOString()}>{updatedDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</time></>}
+      </div>
+    </header>
+    {heroImage && <figure class="article-hero"><img src={heroImage} alt="" /></figure>}
+    <div class="article-body"><slot /></div>
+    <PostComments />
+  </article>
+</SiteLayout>

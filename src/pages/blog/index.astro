@@ -1,63 +1,28 @@
 ---
-import BaseHead from "../../components/BaseHead.astro";
-import Header from "../../components/Header.astro";
-import Footer from "../../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
-import { getCollection } from "astro:content";
-import FormattedDate from "../../components/FormattedDate.astro";
-import { authors } from "../../authors";
+import { getCollection } from 'astro:content';
+import SiteLayout from '../../layouts/SiteLayout.astro';
 
-const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+const posts = (await getCollection('blog'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <Header />
-    <main class="max-w-7xl mx-auto mt-8">
-      <div class="prose">
-        <h1 id="projects">Blog Entries</h1>
-      </div>
-      <section class="mt-4">
-        <ul>
-          {
-            posts.map((post, idx) => (
-              <li class="py-4">
-                <a href={`/blog/${post.slug}/`} class="flex gap-2 bg-background-extreme border border-neutral-300 rounded shadow translate transition hover:scale-105 hover:translate-x-4 hover:-translate-y-4">
-                  <img
-                    class="h-32 aspect-video rounded-l"
-                    src={post.data.heroImage}
-                    alt=""
-                  />
-                  <div class="flex flex-col justify-between">
-                    <div>
-                      <h4 class="text-lg font-bold tracking-tight">
-                        {post.data.title}
-                      </h4>
-                      <div class="font-light text-sm flex items-center">
-                        <FormattedDate date={post.data.pubDate} /> 
-                        {post.data.authors.map((item) => (
-                          <div class="flex h-8 items-center ml-1">
-                             &bull; <img src={authors[item].image} class="h-[1em] w-[1em] my-0 ml-1 mr-1 rounded">{authors[item].name}
-                          </div>
-                        ))}
-                      </div>
-                      <p>{post.data.description}</p>
-                    </div>
-                    <p class="underline text-neutral-600 pb-2">Learn more</span>
-                  </div>
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </section>
-    </main>
-    <Footer />
-  </body>
-</html>
+<SiteLayout
+  title="Articles — Bloeckchengrafik"
+  description="Finished articles about software, experiments, and things learned along the way."
+  mainClass="subpage"
+>
+  <section class="writing" aria-labelledby="articles-title">
+    <div class="section-head"><h1 id="articles-title">Articles</h1></div>
+    <div class="writing-list">
+      {posts.map((post) => (
+        <article>
+          <h2><a href={`/blog/${post.id}/`}>{post.data.title}</a></h2>
+          <div>
+            <p>{post.data.description}</p>
+            <p class="writing-meta"><time datetime={post.data.pubDate.toISOString()}>{post.data.pubDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</time></p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</SiteLayout>

@@ -1,0 +1,32 @@
+---
+import { type CollectionEntry, getCollection, render } from 'astro:content';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+
+export async function getStaticPaths() {
+  const notes = await getCollection('labNotes');
+  return notes.map((note) => ({ params: { slug: note.id }, props: note }));
+}
+
+type Props = CollectionEntry<'labNotes'>;
+const note = Astro.props;
+const { Content } = await render(note);
+const noteStatus = { open: '○ Open', resolved: '✓ Resolved', superseded: '↳ Superseded' };
+---
+
+<SiteLayout title={`${note.data.title} — Bloeckchengrafik`} description={note.data.description} mainClass="article-page lab-note">
+  <article>
+    <header class="article-header">
+      <a class="back-link" href="/lab-notes/">← Lab Notes</a>
+      <div class="note-heading">
+        <span class:list={['status', note.data.status]}>{noteStatus[note.data.status]}</span>
+        <h1>{note.data.title}</h1>
+      </div>
+      <div class="meta">
+        {note.data.pubDate && <><time datetime={note.data.pubDate.toISOString()}>{note.data.pubDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Europe/Berlin' })}</time> · </>}
+        {note.data.tags.join(' · ')}
+      </div>
+      {note.data.project && <p class="connections">Project: <a href={note.data.project.href}>{note.data.project.label}</a></p>}
+    </header>
+    <div class="article-body"><Content /></div>
+  </article>
+</SiteLayout>

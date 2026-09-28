@@ -1,63 +1,89 @@
 ---
-import HeaderLink from "./HeaderLink.astro";
-import { SITE_TITLE } from "../consts";
+import {SITE_TITLE} from "../consts";
 import TwitterLogo from "phosphor-astro/TwitterLogoDuotone.astro";
 import GithubLogo from "phosphor-astro/GithubLogoDuotone.astro";
 import DiscordLogo from "phosphor-astro/DiscordLogoDuotone.astro";
 import SOLogo from "phosphor-astro/StackOverflowLogoDuotone.astro";
+import {
+    NavigationMenu,
+    NavigationMenuItem,
+    NavigationMenuTrigger,
+    NavigationMenuContent,
+    NavigationMenuLink
+} from "node_modules/@radix-ui/react-navigation-menu/dist";
 ---
-
-<header class="w-full h-16 p-2 flex bg-background-extreme shadow">
-    <nav class="max-w-7xl w-full mx-auto flex justify-between items-center">
+<div class="fixed top-0 left-0 right-0 flex justify-center">
+    <NavigationMenu className="w-5/6 h-16 p-2 m-2 flex">
+        <NavigationMenuItem className="sm:block hidden">
+            <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+            <NavigationMenuContent>
+                <ul class="grid w-[500px] gap-3 p-2 lg:grid-cols-[.75fr_1fr]">
+                    <li class="row-span-3">
+                        <NavigationMenuLink asChild>
+                            <a
+                                    class="flex h-full w-full select-none flex-col justify-end rounded-base p-6 no-underline outline-hidden"
+                                    href="https://ui.shadcn.com"
+                            >
+                                <div class="mb-2 mt-4 text-lg font-heading">
+                                    shadcn/ui
+                                </div>
+                                <p class="text-sm font-base leading-tight">
+                                    Beautifully designed components that you can copy and
+                                    paste into your apps. Accessible. Customizable. Open
+                                    Source.
+                                </p>
+                            </a>
+                        </NavigationMenuLink>
+                    </li>
+                </ul>
+            </NavigationMenuContent>
+        </NavigationMenuItem>
         <h2 class="text-2xl">
             <a href="/">{SITE_TITLE}</a>
         </h2>
         <div class="flex gap-2">
-            <HeaderLink href="/" data-umami-event="click home">Home</HeaderLink>
-            <HeaderLink href="/#projects" data-umami-event="click projects"
-                >Projects</HeaderLink
-            >
-            <HeaderLink href="/blog" data-umami-event="click blog"
-                >Blog</HeaderLink
+            <NavigationMenuItem>Home</NavigationMenuItem>
+            <NavigationMenuItem>Projects</NavigationMenuItem>
+            <NavigationMenuItem>Blog</NavigationMenuItem>
             >
         </div>
         <div class="flex gap-2">
             <a
-                href="https://twitter.com/BloeckchenDev"
-                target="_blank"
-                data-umami-event="exit twitter"
-                title="@BloeckchenDev"
+                    href="https://twitter.com/BloeckchenDev"
+                    target="_blank"
+                    data-umami-event="exit twitter"
+                    title="@BloeckchenDev"
             >
                 <span class="sr-only">Follow me on Twitter</span>
-                <TwitterLogo class="text-black aspect-square h-8" />
+                <TwitterLogo class="text-black aspect-square h-8"/>
             </a>
             <a
-                href="https://github.com/bloeckchengrafik"
-                target="_blank"
-                data-umami-event="exit gh"
-                title="@Bloeckchengrafik"
+                    href="https://github.com/bloeckchengrafik"
+                    target="_blank"
+                    data-umami-event="exit gh"
+                    title="@Bloeckchengrafik"
             >
                 <span class="sr-only">Follow me on GitHub</span>
-                <GithubLogo class="text-black aspect-square h-8" />
+                <GithubLogo class="text-black aspect-square h-8"/>
             </a>
             <a
-                href="https://discord.gg/rs9WxKs6tt"
-                target="_blank"
-                title="@bloeckchengrafik"
-                data-umami-event="exit discord"
+                    href="https://discord.gg/rs9WxKs6tt"
+                    target="_blank"
+                    title="@bloeckchengrafik"
+                    data-umami-event="exit discord"
             >
                 <span class="sr-only">Join me on discord</span>
-                <DiscordLogo class="text-black aspect-square h-8" />
+                <DiscordLogo class="text-black aspect-square h-8"/>
             </a>
             <a
-                href="https://stackoverflow.com/users/16519092/bloeckchen"
-                target="_blank"
-                data-umami-event="exit stackoverflow"
-                title="Yes, i have a stack overflow account, flame me"
-                aria-label="Stack Overflow"
+                    href="https://stackoverflow.com/users/16519092/bloeckchen"
+                    target="_blank"
+                    data-umami-event="exit stackoverflow"
+                    title="Yes, i have a stack overflow account, flame me"
+                    aria-label="Stack Overflow"
             >
-                <SOLogo class="text-black aspect-square h-8" />
+                <SOLogo class="text-black aspect-square h-8"/>
             </a>
         </div>
-    </nav>
-</header>
+    </NavigationMenu>
+</div>

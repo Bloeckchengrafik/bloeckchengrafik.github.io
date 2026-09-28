@@ -13,6 +13,13 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "allowJs": true,
-    "jsx": "preserve"
-  },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  }
 }

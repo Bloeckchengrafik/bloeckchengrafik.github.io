@@ -1,0 +1,89 @@
+---
+import '../styles/notebook-base.css';
+import '../styles/notebook-daylight.css';
+import '../styles/notebook-hero.css';
+import '../styles/site.css';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  mainClass?: string;
+}
+
+const { title, description, image = '/me-card.png', mainClass } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const socialImage = new URL(image, Astro.site);
+const home = Astro.url.pathname === '/';
+const sectionLink = (id: string) => home ? `#${id}` : `/#${id}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <meta name="generator" content={Astro.generator}>
+    <title>{title}</title>
+    <meta name="description" content={description}>
+    <link rel="canonical" href={canonical}>
+    <link rel="icon" type="image/jpeg" href="/favicon.jpg">
+    <link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin>
+    <link rel="alternate" type="application/rss+xml" title="RSS feed" href="/rss.xml">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content={canonical}>
+    <meta property="og:title" content={title}>
+    <meta property="og:description" content={description}>
+    <meta property="og:image" content={socialImage}>
+    <meta name="twitter:card" content="summary_large_image">
+    <slot name="head" />
+    <script defer src="https://web-analytics.everbuild.org/script.js" data-website-id="8ff0601a-6e85-496c-aa86-ee3184ca0595"></script>
+  </head>
+  <body>
+    <a href="#main" class="skip">Skip to content</a>
+    <div class="page">
+      <header class="site-header">
+        <a class="brand" href="/">Bloeckchengrafik</a>
+        <nav aria-label="Primary">
+          <a href={sectionLink('projects')}>Projects</a>
+          <a href={sectionLink('articles')}>Articles</a>
+          <a href={home ? '#lab-notes' : '/lab-notes/'}>Lab Notes</a>
+          <a href={sectionLink('about')}>About</a>
+          <a href="https://github.com/Bloeckchengrafik">GitHub ↗</a>
+        </nav>
+      </header>
+      <main id="main" class={mainClass}><slot /></main>
+      <footer id="about">
+        <div class="footer-main">
+          <div><strong>Christian Bergschneider</strong><p>Software &amp; IoT Engineer · CS student<br>Germany · sailing</p></div>
+          <nav aria-label="Contact"><a href="https://github.com/Bloeckchengrafik">GitHub</a><a href="mailto:christian.bergschneider@gmx.de">email</a></nav>
+        </div>
+        <div class="footer-shelf">
+          <section class="footer-group" aria-labelledby="footer-me">
+            <h2 id="footer-me">Me</h2>
+            <a href="/button/" aria-label="My 88 by 31 button and linking options">
+              <picture>
+                <source media="(prefers-reduced-motion: reduce)" srcset="/bloeckchengrafik-88x31.png">
+                <img src="/bloeckchengrafik-88x31.gif" width="88" height="31" alt="Bloeckchengrafik button, alternating with ‘works on my synthesizer’">
+              </picture>
+            </a>
+          </section>
+          <section class="footer-group" aria-labelledby="footer-meta">
+            <h2 id="footer-meta">Meta</h2>
+            <div class="meta-links">
+              <a href="/rss.xml">RSS feed</a>
+              <a href="https://github.com/Bloeckchengrafik/bloeckchengrafik.github.io">View source</a>
+              <a href="/imprint/">Imprint</a>
+            </div>
+          </section>
+          <section class="footer-group" aria-labelledby="footer-friends">
+            <h2 id="footer-friends">Friends</h2>
+            <a href="https://duplexsystem.org/" aria-label="Visit duplexsystem.org"><img src="/duplexsystem-88x31.png" width="88" height="31" alt="duplexsystem.org"></a>
+          </section>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
