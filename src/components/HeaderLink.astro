@@ -15,11 +15,10 @@ const isActive = href === pathname || href === '/' + subpath?.[0];
 </a>
 <style>
 	a {
-		display: inline-block;
-		text-decoration: none;
+		@apply tracking-tight text-lg py-1 px-2 rounded bg-transparent transition hover:bg-gray-300 dark:hover:bg-gray-800;
 	}
-	a.active {
-		font-weight: bolder;
-		text-decoration: underline;
+
+	.active {
+		@apply bg-secondary hover:bg-secondary;
 	}
 </style>
