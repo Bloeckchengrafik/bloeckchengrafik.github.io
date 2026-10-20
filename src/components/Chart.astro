@@ -1,0 +1,80 @@
+---
+interface Props {
+  chart: object;
+  chartId: string;
+  title?: string;
+  description?: string;
+}
+
+const { chart, chartId, title, description } = Astro.props;
+---
+
+<div class="chart-container w-full p-4 bg-white rounded-lg shadow-md">
+  {title && <h2 id={`${chartId}-title`} class="text-lg font-semibold mb-2">{title}</h2>}
+  {description && <p id={`${chartId}-desc`} class="text-sm text-gray-600 mb-4">{description}</p>}
+  <div 
+    id={chartId}
+    role="img"
+    aria-labelledby={title ? `${chartId}-title` : undefined}
+    aria-describedby={description ? `${chartId}-desc` : undefined}
+  ></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+<script is:inline define:vars={{ chartId, chart }}>
+try {
+  const options = chart;
+  
+  // Add default accessibility options
+  options.chart = {
+    ...options.chart,
+    animations: {
+      enabled: true,
+      easing: 'easeinout',
+      speed: 800,
+      animateGradually: {
+        enabled: true,
+        delay: 150
+      },
+      dynamicAnimation: {
+        enabled: true,
+        speed: 350
+      }
+    },
+    accessibility: {
+      enabled: true,
+      announceNewData: {
+        enabled: true,
+        announcementPolicy: 'all'
+      }
+    }
+  };
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const chart = new ApexCharts(document.querySelector(`#${chartId}`), options);
+    chart.render().catch(console.error);
+  });
+} catch (error) {
+  console.error('Error rendering chart:', error);
+  document.querySelector(`#${chartId}`)?.insertAdjacentHTML(
+    'beforeend',
+    '<div class="text-red-500">Error rendering chart. Please check console for details.</div>'
+  );
+}
+</script>
+
+<style>
+.chart-container {
+  min-height: 400px;
+  /* Ensure contrast for accessibility */
+  --chart-background: theme('colors.white');
+  --chart-text: theme('colors.gray.900');
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chart-container {
+    --chart-animation-duration: 0s;
+  }
+}
+</style>

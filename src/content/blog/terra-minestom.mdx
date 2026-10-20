@@ -2,6 +2,7 @@
 title: 'Terra on Minestom'
 description: "Terra is a world generation library for Minecraft. It's a great library, but it's not compatible with Minestom. Let's fix that!"
 pubDate: 'Dec 29 2024'
+updatedDate: 'Jan 2 2025'
 heroImage: '/terra-minestom-resources/screenshot1.webp'
 authors: [ "chris" ]
 ---
@@ -25,11 +26,62 @@ Minestom is a Java Library for creating Minecraft servers. It is very fast and l
 
 ## Compatibility
 
-Terra is written with multi-platform support in mind. This made it fairly easy to get some basic generation up and running. Just adding the gradle module and the required libraries was enough to get a testserver working. Minestom generates Worlds on a chunk-by-chunk basis, which works nicely with the first `ProtoChunk` step of Terra. The feature generation step is a bit more complicated since it needs to access out-of-chunk blocks as well as write to them. Writing is fairly easy using the Minestom [fork-API](https://minestom.net/docs/world/generation#modifying-over-unit-borders). Reading not so much. Currently, I cache the last 32 generated chunks in a LRU-Cache using the `caffeine` library and generate the `ProtoChunks` on demand. After a fair amount of fiddling and help from the [Terra Discord](https://discord.gg/PXUEbbF), I got this:
+Terra is written with multi-platform support in mind. This made it fairly easy to get some basic generation up and running. Just adding the gradle module and the required libraries was enough to get a testserver working. Minestom generates Worlds on a chunk-by-chunk basis, which works nicely with the first `ProtoChunk` step of Terra. The feature generation step is a bit more complicated since it needs to access out-of-chunk blocks as well as write to them. Writing is fairly easy using the Minestom [fork-API](https://minestom.net/docs/world/generation#modifying-over-unit-borders). Reading not so much. Currently, I cache the last n generated chunks in a LRU-Cache using the `caffeine` library and generate the `ProtoChunks` on demand. After a fair amount of fiddling and help from the [Terra Discord](https://discord.gg/PXUEbbF), I got this:
 
 ![Terra on Minestom](/terra-minestom-resources/screenshot1.webp)
 ![Terra on Minestom](/terra-minestom-resources/screenshot2.webp)
 ![Terra on Minestom](/terra-minestom-resources/screenshot3.webp)
+
+## Getting to speed
+Before, I mentioned that the generation was slow. I wanted to measure the impact of the cache and try different sizes. For this, I built a simple benchmark that generates a world and measures the time it takes to generate it. The results look something like this:
+
+```
+Preloaded 625 chunks in world in 19722.635233ms. That's 31.689477223319898 Chunks/s
+CacheStats{hitCount=39082432, missCount=7656, loadSuccessCount=7656, loadFailureCount=0, totalLoadTime=182010163523, evictionCount=7624, evictionWeight=7624}
+```
+
+> This benchmark was run on my local machine. The numbers will vary depending on your hardware and jvm settings. As such, use these numbers in comparison to each other, not as an absolute value.
+
+Now, let's try different cache sizes:
+
+| Cache Size  | Time (ms) | Chunks/s | Cache Load Count | Cache Hit Rate (%) |
+|:-----------:|:---------:|:--------:|:----------------:|:------------------:|
+| 16          | 108098    | 5.7      | 44304            | 99.912             |
+| 24          |  44969    | 13.9     | 18003            | 99.964             |
+| 32          |  26081    | 23.9     | 8515             | 99.981             |
+| 48          |  17040    | 36.6     | 3803             | 99.992             |
+| 64          |  10245    | 61.0     | 1681             | 99.997             |
+| 96          |   7393    | 84.5     | 903              | 99.998             |
+| 128         |   7227    | 86.4     | 772              | 99.998             |
+| 256         |   7290    | 85.7     | 795              | 99.999             |
+| 512         |   7036    | 88.9     | 727              | 99.999             |
+
+I tried running the generator without any cache, but it was so slow that I didn't even bother to wait for it to finish. I will not include the numbers here because they are not meaningful.
+
+But since a picture is worth a thousand words, here is a chart of cache size and the time it takes to generate the world:
+
+import Chart from "../../components/Chart.astro"
+
+<Chart
+  chartId="line-chart"
+  chart={
+    {
+      "chart": {
+        "type": "line"
+      },
+      "series": [{
+        "name": "Time (ms)",
+        "data": [108098, 44969, 26081, 17040, 10245, 7393, 7227, 7290, 7036]
+      }],
+      "xaxis": {
+        "categories": [16, 24, 32, 48, 64, 96, 128, 256, 512]
+      }
+    }
+  }
+/>
+
+The chart shows that the time it takes to generate the world decreases with increasing cache size. The sweet spot seems to be around 128 cached chunks. After that, the time it takes to generate the 
+world does not decrease significantly anymore. So let's stick with 128 chunks for now. With that, the performance seems to be acceptable, for now at least.
 
 ## How can I use it?
 
