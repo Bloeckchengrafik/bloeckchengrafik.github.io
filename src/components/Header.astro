@@ -1,10 +1,10 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
-import TwitterLogo from "phosphor-astro/TwitterLogoDuotone.astro"
-import GithubLogo from "phosphor-astro/GithubLogoDuotone.astro"
-import DiscordLogo from "phosphor-astro/DiscordLogoDuotone.astro"
-import SOLogo from "phosphor-astro/StackOverflowLogoDuotone.astro"
+import TwitterLogo from "phosphor-astro/TwitterLogoDuotone.astro";
+import GithubLogo from "phosphor-astro/GithubLogoDuotone.astro";
+import DiscordLogo from "phosphor-astro/DiscordLogoDuotone.astro";
+import SOLogo from "phosphor-astro/StackOverflowLogoDuotone.astro";
 ---
 
 <header class="w-full h-16 p-2 flex bg-background-extreme shadow">
@@ -13,24 +13,49 @@ import SOLogo from "phosphor-astro/StackOverflowLogoDuotone.astro"
             <a href="/">{SITE_TITLE}</a>
         </h2>
         <div class="flex gap-2">
-            <HeaderLink href="/">Home</HeaderLink>
-            <HeaderLink href="/#projects">Projects</HeaderLink>
-            <HeaderLink href="/blog">Blog</HeaderLink>
+            <HeaderLink href="/" data-umami-event="click home">Home</HeaderLink>
+            <HeaderLink href="/#projects" data-umami-event="click projects"
+                >Projects</HeaderLink
+            >
+            <HeaderLink href="/blog" data-umami-event="click blog"
+                >Blog</HeaderLink
+            >
         </div>
         <div class="flex gap-2">
-            <a href="https://twitter.com/BloeckchenDev" target="_blank" title="@BloeckchenDev">
+            <a
+                href="https://twitter.com/BloeckchenDev"
+                target="_blank"
+                data-umami-event="exit twitter"
+                title="@BloeckchenDev"
+            >
                 <span class="sr-only">Follow me on Twitter</span>
                 <TwitterLogo class="text-black aspect-square h-8" />
             </a>
-            <a href="https://github.com/bloeckchengrafik" target="_blank" title="@Bloeckchengrafik">
+            <a
+                href="https://github.com/bloeckchengrafik"
+                target="_blank"
+                data-umami-event="exit gh"
+                title="@Bloeckchengrafik"
+            >
                 <span class="sr-only">Follow me on GitHub</span>
                 <GithubLogo class="text-black aspect-square h-8" />
             </a>
-            <a href="https://discord.gg/rs9WxKs6tt" target="_blank" title="@bloeckchengrafik">
+            <a
+                href="https://discord.gg/rs9WxKs6tt"
+                target="_blank"
+                title="@bloeckchengrafik"
+                data-umami-event="exit discord"
+            >
                 <span class="sr-only">Join me on discord</span>
                 <DiscordLogo class="text-black aspect-square h-8" />
             </a>
-            <a href="https://stackoverflow.com/users/16519092/bloeckchen" target="_blank" title="Yes, i have a stack overflow account, flame me" aria-label="Stack Overflow">
+            <a
+                href="https://stackoverflow.com/users/16519092/bloeckchen"
+                target="_blank"
+                data-umami-event="exit stackoverflow"
+                title="Yes, i have a stack overflow account, flame me"
+                aria-label="Stack Overflow"
+            >
                 <SOLogo class="text-black aspect-square h-8" />
             </a>
         </div>
