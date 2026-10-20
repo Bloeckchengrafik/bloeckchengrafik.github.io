@@ -2,7 +2,7 @@
 title: 'Terra on Minestom'
 description: "Terra is a world generation library for Minecraft. It's a great library, but it's not compatible with Minestom. Let's fix that!"
 pubDate: 'Dec 29 2024'
-heroImage: '/terra-minestom-resources/screenshot1.png'
+heroImage: '/terra-minestom-resources/screenshot1.webp'
 ---
 
 > This blog post is a work in progress. I will update it as I make progress on the project.
@@ -26,9 +26,9 @@ Minestom is a Java Library for creating Minecraft servers. It is very fast and l
 
 Terra is written with multi-platform support in mind. This made it fairly easy to get some basic generation up and running. Just adding the gradle module and the required libraries was enough to get a testserver working. Minestom generates Worlds on a chunk-by-chunk basis, which works nicely with the first `ProtoChunk` step of Terra. The feature generation step is a bit more complicated since it needs to access out-of-chunk blocks as well as write to them. Writing is fairly easy using the Minestom [fork-API](https://minestom.net/docs/world/generation#modifying-over-unit-borders). Reading not so much. Currently, I cache the last 32 generated chunks in a LRU-Cache using the `caffeine` library and generate the `ProtoChunks` on demand. After a fair amount of fiddling and help from the [Terra Discord](https://discord.gg/PXUEbbF), I got this:
 
-![Terra on Minestom](/terra-minestom-resources/screenshot1.png)
-![Terra on Minestom](/terra-minestom-resources/screenshot2.png)
-![Terra on Minestom](/terra-minestom-resources/screenshot3.png)
+![Terra on Minestom](/terra-minestom-resources/screenshot1.webp)
+![Terra on Minestom](/terra-minestom-resources/screenshot2.webp)
+![Terra on Minestom](/terra-minestom-resources/screenshot3.webp)
 
 ## How can I use it?
 
