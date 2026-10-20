@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+
+const statusLabel = { open: '○ Open', resolved: '✓ Resolved', superseded: '↳ Superseded' };
+const notes = (await getCollection('labNotes')).sort((a, b) =>
+  (b.data.pubDate?.valueOf() ?? 0) - (a.data.pubDate?.valueOf() ?? 0)
+  || a.id.localeCompare(b.id)
+);
+---
+
+<SiteLayout
+  title="Lab Notes — Bloeckchengrafik"
+  description="Working notes on hardware, Linux, and the things that do not quite work yet."
+  mainClass="subpage note-index"
+>
+  <section class="notes" aria-labelledby="notes-title">
+    <div class="section-head"><h1 id="notes-title">Lab Notes</h1></div>
+    <p>Experiments, debugging trails, and loose ends. These are working notes, not finished articles.</p>
+    <div class="note-rows">
+      {notes.map((note) => (
+        <article>
+          <span class:list={['status', note.data.status]}>{statusLabel[note.data.status]}</span>
+          <div>
+            <h2><a href={`/lab-notes/${note.id}/`}>{note.data.title}</a></h2>
+            <p class="note-summary">{note.data.description}</p>
+            <div class="meta">
+              {note.data.pubDate && <><time datetime={note.data.pubDate.toISOString()}>{note.data.pubDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Europe/Berlin' })}</time> · </>}
+              {note.data.tags.join(' · ')}
+            </div>
+            {note.data.project && <p class="connections">Project: <a href={note.data.project.href}>{note.data.project.label}</a></p>}
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</SiteLayout>

@@ -1,0 +1,106 @@
+.intro { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 2.5rem; padding: 2.5rem 0; align-items: center; }
+.intro h1 { font-size: clamp(2.2rem, 3.5vw, 3rem); }
+.intro p { font-size: 1.1rem; }
+.personal-snapshots { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); align-items: center; gap: .5rem; }
+.intro-person { display: flow-root; }
+.sailing-photo {
+  width: 100%;
+  margin: 0;
+  padding: 9px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: 1px 3px 7px #28353016;
+  transform: rotate(-2deg);
+}
+.sailing-photo img { display: block; width: 100%; height: auto; }
+.sticky {
+  --note-paper: #efdfa0;
+  --note-ink: #403b27;
+  background: var(--note-paper);
+  color: var(--note-ink);
+  padding: 1.1rem;
+  border: 0;
+  border-top: 12px solid #e4d38f;
+  box-shadow: 1px 3px 4px #28353012, 3px 9px 14px #2835300d;
+}
+.current.sticky {
+  transform: rotate(1.6deg);
+  align-self: start;
+  margin: .25rem .4rem 0 0;
+}
+.current li { border-bottom-color: #403b272b; }
+.current li:last-child { border-bottom: 0; }
+.notes { padding: 0 0 2rem; }
+.note-rows article { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 1rem; padding: .9rem 0; border-bottom: 1px solid var(--line); }
+.note-rows h3 { font-size: 1.08rem; font-weight: 400; margin-bottom: .3rem; }
+.note-rows h3 a { text-decoration: none; }
+.note-rows h3 a:hover { text-decoration: underline; }
+.note-rows .connections { padding-top: .3rem; }
+.note-rows .status { padding-top: .1rem; }
+.writing { padding-bottom: 2rem; }
+.writing-feature { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 1.5rem; padding: 1rem 0 1.6rem; border-bottom: 1px solid var(--line); }
+.writing-label { font: .8rem/1.6 var(--mono); color: var(--accent); text-transform: uppercase; letter-spacing: .08em; }
+.writing-feature h3 { max-width: none; font: 400 clamp(2rem, 4vw, 3rem)/1.08 Georgia, serif; letter-spacing: -.025em; }
+.writing-feature h3 a, .writing-list h3 a { text-decoration: none; }
+.writing-feature p { max-width: 42rem; margin-top: .9rem; }
+.writing-meta { margin-top: 1rem; font: .8rem/1.6 var(--mono); color: var(--muted); }
+.writing-read { display: inline-block; margin-top: 1rem; color: var(--accent); }
+.writing-archive { padding-top: 1.5rem; }
+.writing-archive .writing-label { margin-bottom: .4rem; }
+.writing-list { display: block; }
+.writing-list article { display: grid; grid-template-columns: minmax(180px, 1fr) 2fr; gap: 2rem; padding: 1rem 0; border-bottom: 1px solid var(--line); }
+.writing-list h3 { font: 400 1.55rem/1.2 Georgia, serif; margin: 0; }
+.writing-list p { color: var(--ink); max-width: 42rem; }
+.section-head { margin-bottom: 1rem; }
+.projects { padding-bottom: 2rem; }
+.other-projects { grid-template-columns: 1fr; gap: 1rem; }
+.other-projects article { display: grid; grid-template-columns: minmax(160px, 1fr) 2fr; column-gap: 2rem; }
+.other-projects .project-meta { margin-top: .4rem; }
+.other-projects .connections { grid-column: 2; }
+.other-projects article { padding: 1.5rem 0; }
+.project-body { min-width: 0; }
+.project-body p { color: var(--ink); max-width: 42rem; }
+.installation-photo {
+  float: left;
+  width: min(38%, 220px);
+  margin: .2rem 1.25rem .7rem 0;
+  padding: 6px;
+  background: #fffdf7;
+  border: 1px solid #d7d0bd;
+  box-shadow: 2px 5px 8px #28353018, 4px 10px 16px #2835300d;
+  transform: rotate(-1deg);
+}
+.installation-photo img { display: block; width: 100%; height: auto; }
+.project-body::after { content: ""; display: block; clear: both; }
+.project-links { display: flex; flex-wrap: wrap; gap: .5rem 1.3rem; margin-top: 1rem; font-size: .95rem; }
+.project-links a { color: var(--accent); }
+.terrain-photo {
+  width: min(100%, 520px);
+  margin: .2rem 1.5rem 1.2rem 0;
+  padding: 8px 8px 1.1rem;
+  background: #e3eddf;
+  border: 1px solid #c4d0be;
+  box-shadow: 2px 5px 8px #28353014, 4px 10px 16px #2835300b;
+  transform: rotate(1deg);
+}
+.terrain-photo img { display: block; width: 100%; height: auto; }
+.terrain-photo figcaption { color: #476251; font: italic .9rem/1.35 Georgia, serif; margin: .6rem .2rem 0; }
+@media(max-width:950px) {
+  .intro { grid-template-columns: 1fr; gap: 1.5rem; }
+  .personal-snapshots { max-width: 620px; justify-self: end; }
+}
+@media(max-width:650px) {
+  .intro { grid-template-columns: 1fr; }
+  .personal-snapshots { grid-template-columns: 1fr 1.2fr; gap: .4rem; }
+  .current.sticky { padding: .8rem; }
+  .current ul { font-size: .85rem; }
+  .terrain-photo { margin-right: .3rem; transform: rotate(.6deg); }
+  .current.sticky { margin: .5rem .4rem; transform: rotate(.7deg); }
+  .note-rows article { grid-template-columns: 1fr; gap: .3rem; }
+  .other-projects article { display: block; }
+  .writing-feature, .writing-list article { display: block; }
+  .writing-feature .writing-label, .writing-list .writing-label { margin-bottom: .6rem; }
+  .writing-list h3 { margin-bottom: .5rem; }
+}
+@media(max-width:380px) { .personal-snapshots { grid-template-columns: 1fr; gap: 1.3rem; } .sailing-photo { width: 75%; } }
+@media print { .sticky { box-shadow: none; transform: none; } }

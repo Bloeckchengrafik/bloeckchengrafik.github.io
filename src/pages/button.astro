@@ -1,0 +1,64 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+
+const buttonUrl = "https://bloeckchengrafik.de/bloeckchengrafik-88x31.gif";
+const siteUrl = "https://bloeckchengrafik.de/";
+const html = `<a href="${siteUrl}"><img src="${buttonUrl}" width="88" height="31" alt="Bloeckchengrafik"></a>`;
+const selfHostedHtml = `<a href="${siteUrl}"><img src="/bloeckchengrafik-88x31.gif" width="88" height="31" alt="Bloeckchengrafik"></a>`;
+const markdown = `[![Bloeckchengrafik](${buttonUrl})](${siteUrl})`;
+---
+
+<SiteLayout
+    title="Button — Bloeckchengrafik"
+    description="An 88×31 button for linking to Bloeckchengrafik, with HTML and Markdown snippets."
+    mainClass="subpage button-page"
+>
+    <div class="section-head">
+        <h1>Button</h1>
+    </div>
+    <p>
+        If you’d like to link here from a button wall, this is my 88×31. It
+        flips between Bloeckchengrafik and “works on my synthesizer”.
+    </p>
+    <div class="button-preview">
+        <picture>
+            <source
+                media="(prefers-reduced-motion: reduce)"
+                srcset="/bloeckchengrafik-88x31.png"
+            />
+            <img
+                src="/bloeckchengrafik-88x31.gif"
+                width="88"
+                height="31"
+                alt="Bloeckchengrafik button, alternating with ‘works on my synthesizer’"
+            />
+        </picture>
+    </div>
+
+    <div class="button-options">
+        <section>
+            <h2>Host it yourself</h2>
+            <p>
+                Download the{" "}
+                <a href="/bloeckchengrafik-88x31.gif" download>
+                    animated GIF
+                </a>{" "}
+                or{" "}
+                <a href="/bloeckchengrafik-88x31.png" download>
+                    static PNG
+                </a>
+                , put it on your site, and link the image here. The snippet
+                assumes the GIF is at your site root; change the path if it
+                isn’t.
+            </p>
+            <pre><code>{selfHostedHtml}</code></pre>
+        </section>
+        <section>
+            <h2>Use the hosted image</h2>
+            <p>If you’d rather not store a copy, use this HTML:</p>
+            <pre><code>{html}</code></pre>
+            <p>Or Markdown:</p>
+            <pre><code>{markdown}</code></pre>
+        </section>
+    </div>
+</SiteLayout>
