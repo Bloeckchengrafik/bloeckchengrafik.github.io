@@ -1,0 +1,5 @@
+I want 
+- https://bloeckchengrafik.de/imprint/
+- https://bloeckchengrafik.de/imprint
+- https://bloeckchengrafik.de/imprint.png
+to be excluded from the wayback archives due to privacy concerns.
