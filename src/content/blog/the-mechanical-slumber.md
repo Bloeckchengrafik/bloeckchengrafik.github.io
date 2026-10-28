@@ -10,7 +10,7 @@ The Stillness. Do you feel it? The calm before the promised storm that never hit
 
 And then there is them. Settling in. Searching places. Finding solitude to fill. Creatures of dawn and dusk. Invisible for you and me. _Wanting_ to stay invisible. Exploring our surroundings. Nature creeping in, finding home. Not invited, yet welcome.
 
-Liminal as in needing the "now" as a means to decide what the "then" means. A bell rings. Was it a drop of water falling from a ceiling? A chain rusting through? We're just listening while the echoes get quieter. A machine starts puffing. It answers the lifeless voice.
+Needing the "now" as a means to decide what the "then" means. A bell rings. Was it a drop of water falling from a ceiling? A chain rusting through? We're just listening while the echoes get quieter. A machine starts puffing. It answers the lifeless voice.
 
 Not meaningless, not important. Layers of layers of _friends._ Not humans, not machines, not creatures but their accidental connection through space and time. He who is wandering is he who gives purpose. But we'll seem like an oversight. Like purpose in the _un-purpose_. Like sand in the rusting gears of a falling-apart dystopia.
 
